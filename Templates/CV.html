@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise 5</title>
+    <script src="cv.js"> </script>
+    <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+
+
+<div class="row">
+     <div class="fullcolumn" style="background-color:#67e3ce;">
+         <h1><blink>CV GRID</blink></h1>
+         <h2>Instructions for Creating CV:</h2>
+         <p>Fill out the following information, then click "Create!"<br>
+         </p>
+    </div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#a8efe3;">
+    <h2>Contact Information</h2>
+    <fieldset><label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="user_email">
+        <label for="tel">Phone Number:</label>
+        <input type="tel" id="tel" name="user_tel" pattern="[0-9]{10}" required>
+    </fieldset>
+  </div>
+  <div class="column" style="background-color:#bef3ea;">
+    <h2>Eduction</h2>
+    <fieldset><label for="Degree">Degree:</label>
+        <input type="text" id="Degree">
+        <label for="Degree2">Additional Degree:</label>
+        <input type="text" id="Degree2">
+        <label for="Degree3">Additional Degree:</label>
+        <input type="text" id="Degree3">
+    </fieldset>
+  </div>
+  <div class="column" style="background-color:#d3f7f1;">
+    <h2>Experience</h2>
+    <fieldset><label for="Experience">Please elaborate on your work experience:</label>
+        <textarea id="Experience" rows="11"></textarea>
+    </fieldset>
+  </div>
+</div>
+<div class="row">
+     <div class="fullcolumn" style="background-color:#DBF8F3;">
+         <button>Create!</button>
+    </div>
+</div>
+</body>
+</html>

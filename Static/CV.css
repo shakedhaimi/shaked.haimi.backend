@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ariel', sans-serif;
+  color: #126d5b;
+}
+
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #d3f8f0;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  font-size: 30px
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 4px 0;
+  font-size: 20px;
+}
+
+p {
+  font-size: 15px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e9fbf8;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 20px;
+}
+
+Button {
+  padding: 19px 39px 18px 39px;
+  color: #1a997f;
+  background-color: #a8f0e1;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #66e5cc;
+  border-width: 1px 1px 3px 2px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin-bottom: 10px;
+}
+
+Button:hover{
+  background-color: #a8f0e1;
+  color: #1a997f;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  border-width: 3px 2px 1px 1px;
+}
+
+
+fieldset {
+  margin-bottom: 5px;
+  border: none;
+}
+
+legend {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.number {
+  background-color: #66e5cc;
+  color: #126d5b;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+
+.row {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  width: 33.33%;
+  padding: 10px;
+  display: table-cell;
+}
+
+.fullcolumn {
+  width: 100%;
+  padding: 10px;
+  display: table-cell;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (min-width: 480px) {
+  form {
+    max-width: 480px;
+  }
+
+}
+
+.Validate{
+    text-decoration: none;
+    color: red;
+}
+
+@keyframes blink {
+    from {color: #a8efe3 }
+    to {color: #d3f7f1 }
+}
+
+blink{animation: blink 1s infinite;}
