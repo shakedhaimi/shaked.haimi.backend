@@ -9,8 +9,8 @@ def home():
 
 
 @app.route('/ContactUs')
-def cu():
-    return f.render_template('ContactForm.html')
+def contact():
+    return f.redirect(url_for('ContactForm')
 
 
 @app.route('/CV')
