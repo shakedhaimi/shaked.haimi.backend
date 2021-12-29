@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+assignment9
+{% endblock %}
+
+{% block body %}
+
+{% set pageName='assignment9' %}
+
+<h1>welcome to {{ pageName }}</h1>
+
+    {% if session.username %}
+        <h2>Welcome Back, {{ session.username }}</h2>
+        <button><a href="/logout">logout</a></button>
+
+    {% else %}
+        <h2>login Page</h2>
+        <form method="POST" action="/assignment9">
+            nickname: <input name="nickname" type="text"> <br><br>
+            email: <input name="email" type="email"> <br><br>
+            password: <input name="password" type="password"> <br><br>
+        <input type="submit" value="login">
+        </form>
+    {% endif %}
+
+    <h2>search users form</h2>
+    <form method="GET" action="/assignment9">
+        search user: <input name="search" type="text"> <br><br>
+        <input type="submit" value="search">
+    </form>
+     <h2>search result</h2>
+        {% if name %}
+            name: {{ name }}<br>
+            email: {{ email }}<br>
+         {% else %}
+            <ul>
+            {% for user in users.values() %}
+                <li>UserName: {{ user.name }}, email: {{ user.email }}</li>
+            {% endfor %}
+            </ul>
+
+        {% endif %}
+{% endblock %}

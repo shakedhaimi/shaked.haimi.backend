@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+assignment8
+{% endblock %}
+
+{% block body %}
+{% set pageName='assignment8'%}
+    <h1>Welcome to {{pageName}}</h1>
+
+    {% if session.username %}
+        <h2>welcome back, {{ session.username }}</h2>
+        <h4>Name: {{ profile.name | default('unknown', true) | upper() }} {{ profile.lastName | default('unknown', true) | upper() }}</h4>
+
+        <h4>University:{{ university | default('unknown', true) | upper()}}</h4>
+        <h4>Hobbies:</h4>
+        <ul>
+            {% for hobby in hobbies |sort %}
+                <li>{{ hobby }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if favoritemovies %}
+            <h4>Favorite Movies:</h4>
+            <ul>
+                {% for movie in favoritemovies |sort %}
+                    <li>{{ movie }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}
