@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment 10</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+{% include('header.html') %}
+
+<h3>Insertion Form</h3>
+<form method="POST" action="/insert_user">
+    Email: <input name="Email" type=text"><br>
+    <br>
+    Nickname:<input name="Nickname" type="text"><br>
+    <br>
+    <input type="submit" value="confirm">
+</form>
+
+<hr>
+
+<h3>Update Form</h3>
+<h4>In order to change a nickname, please insert an email address and the new preferred nickname:</h4>
+<form method="POST" action="/update_user">
+    Email: <input name="Email" type=text"><br>
+    <br>
+    Nickname:<input name="Nickname" type="text"><br>
+    <br>
+    <input type="submit" value="confirm">
+</form>
+
+<hr>
+
+<h3>Deletion Form</h3>
+<h4>In order to delete a user from the system, please insert an email address:</h4>
+<form method="POST" action="/delete_user">
+    Email: <input name="Email" type=text"><br>
+    <br>
+    <input type="submit" value="confirm">
+</form>
+
+<hr>
+
+
+{% if session.userCommitName %}
+    {% if session.commitType=='delete' %}
+        <h4> The user: {{ session.userCommitName }} was deleted </h4>
+    {% else %}
+        <h4> {{ session.userCommitName }}, your {{ session.commitType }} was done successfully </h4>
+    {% endif %}
+{% endif %}
+<h3> update users list </h3>
+<ul>
+    {% for user in users %}
+        <li> User Nickname: {{ user.name }} ,User Email: {{ user.email }}</li>
+    {% endfor %}
+</ul>
+
+
+</body>
+
+
+</html>

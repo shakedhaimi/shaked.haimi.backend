@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment11 Outer Source</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<h4>(frontend) Please Insert and ID:</h4>
+<form name="frontend_form" >
+    id: <input name="id" type=text" id="frontID"><br>
+    <br>
+    <button type="button" onclick="getUsers('frontID')"> get user</button>
+</form>
+
+<main>
+
+</main>
+<script src="/static/assignment11.js"></script>
+<hr>
+
+<h4>(backend) Please insert an ID:</h4>
+<form method="POST" action="/assignment11/outersource">
+    id: <input name="id" type=text" id="backID"><br>
+    <br>
+    <input type="submit" value="Get User">
+</form>
+{% if user %}
+   <h4> user id: {{ user['data']['id'] }} </h4>
+   <h4> email: {{ user['data']['email'] }}</h4>
+   <h4> first_name: {{ user['data']['first_name'] }}</h4>
+   <h4> last_name: {{ user['data']['last_name'] }}</h4>
+   <hr>
+{% endif %}
+
+</body>
+</html>
